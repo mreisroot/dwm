@@ -75,6 +75,17 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,           XK_F6, spawn,         SHCMD("redshift -O 1500K") },
 	{ MODKEY|ShiftMask,           XK_F7, spawn,         SHCMD("redshift -O 3000K") },
 	{ MODKEY|ShiftMask,           XK_F8, spawn,         SHCMD("redshift -x") },
+
+  // Volume control for Linux
+	{ MODKEY|ShiftMask,           XK_F10, spawn,         SHCMD("amixer -q set Master toggle") },
+	{ MODKEY|ShiftMask,           XK_F11, spawn,         SHCMD("amixer -q set Master 5%- unmute") },
+	{ MODKEY|ShiftMask,           XK_F12, spawn,         SHCMD("amixer -q set Master 5%+ unmute") },
+  
+  // Volume control for BSD
+	/* { MODKEY|ShiftMask,           XK_F10, spawn,         SHCMD("ossvol -t") },
+	{ MODKEY|ShiftMask,           XK_F11, spawn,         SHCMD("ossvol -d 2") },
+	{ MODKEY|ShiftMask,           XK_F12, spawn,         SHCMD("ossvol -i 2") }, */
+
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
