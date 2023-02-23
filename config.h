@@ -76,12 +76,12 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,           XK_F7, spawn,         SHCMD("redshift -O 3000K") },
 	{ MODKEY|ShiftMask,           XK_F8, spawn,         SHCMD("redshift -x") },
 
-  // Volume control for Linux
+  // Volume control through ALSA
 	{ MODKEY|ShiftMask,           XK_F10, spawn,         SHCMD("amixer -q set Master toggle") },
 	{ MODKEY|ShiftMask,           XK_F11, spawn,         SHCMD("amixer -q set Master 5%- unmute") },
 	{ MODKEY|ShiftMask,           XK_F12, spawn,         SHCMD("amixer -q set Master 5%+ unmute") },
   
-  // Volume control for BSD
+  // Volume control through OSS (generally used on other Unix-like systems)
 	/* { MODKEY|ShiftMask,           XK_F10, spawn,         SHCMD("ossvol -t") },
 	{ MODKEY|ShiftMask,           XK_F11, spawn,         SHCMD("ossvol -d 2") },
 	{ MODKEY|ShiftMask,           XK_F12, spawn,         SHCMD("ossvol -i 2") }, */
