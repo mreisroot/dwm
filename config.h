@@ -63,13 +63,15 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[]  = { "st", NULL };
+static const char *termcmd2[]  = { "darktile", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
-	{ MODKEY|ShiftMask,                       XK_d,      spawn,          SHCMD("passmenu") },
-	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY|ControlMask,           XK_Return, spawn,         SHCMD("st -e tmux") },
+	{ MODKEY,                     XK_d,      spawn,          {.v = dmenucmd } },
+	{ MODKEY|ShiftMask,           XK_d,      spawn,          SHCMD("passmenu") },
+	{ MODKEY,                     XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY|ShiftMask,           XK_Return, spawn,          {.v = termcmd2 } },
+	{ MODKEY|ControlMask,         XK_Return, spawn,         SHCMD("st -e tmux") },
 	{ MODKEY|ShiftMask,           XK_F4, spawn,         SHCMD("xbacklight -dec 15") },
 	{ MODKEY|ShiftMask,           XK_F5, spawn,         SHCMD("xbacklight -inc 15") },
 	{ MODKEY|ShiftMask,           XK_F6, spawn,         SHCMD("redshift -O 1500K") },
