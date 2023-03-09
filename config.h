@@ -73,7 +73,7 @@ static const Key keys[] = {
 	{ MODKEY,                     XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY|ShiftMask,           XK_Return, spawn,          {.v = termcmd2 } },
 	{ MODKEY|ControlMask,         XK_Return, spawn,         SHCMD("st -e tmux") },
-  // Screen brightness and bluelight filter
+  // Screen brightness and blue light filter
 	{ MODKEY|ShiftMask,           XK_F4, spawn,         SHCMD("xbacklight -dec 15") },
 	{ MODKEY|ShiftMask,           XK_F5, spawn,         SHCMD("xbacklight -inc 15") },
 	{ MODKEY|ShiftMask,           XK_F6, spawn,         SHCMD("redshift -O 1500K") },
