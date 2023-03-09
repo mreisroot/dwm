@@ -80,9 +80,9 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,           XK_F7, spawn,         SHCMD("redshift -O 3000K") },
 	{ MODKEY|ShiftMask,           XK_F8, spawn,         SHCMD("redshift -x") },
   // Volume control through FreeBSD's Mixer
-	{ MODKEY|ShiftMask,           XK_F10, spawn,         SHCMD("mixer pcm vol -5") },
-	{ MODKEY|ShiftMask,           XK_F11, spawn,         SHCMD("mixer pcm vol +5") },
-	{ MODKEY|ShiftMask,           XK_F12, spawn,         SHCMD("mixer pcm vol mute") },
+	{ MODKEY|ShiftMask,           XK_F10, spawn,         SHCMD("mixer vol -5") },
+	{ MODKEY|ShiftMask,           XK_F11, spawn,         SHCMD("mixer vol +5") },
+	{ MODKEY|ShiftMask,           XK_F12, spawn,         SHCMD("mixer vol mute") },
   // Window layout commands
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
