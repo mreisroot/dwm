@@ -67,27 +67,23 @@ static const char *termcmd2[]  = { "darktile", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
+  // Main commands
 	{ MODKEY,                     XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,           XK_d,      spawn,          SHCMD("passmenu") },
 	{ MODKEY,                     XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY|ShiftMask,           XK_Return, spawn,          {.v = termcmd2 } },
+  // Screen brightness and blue light filter
 	{ MODKEY|ControlMask,         XK_Return, spawn,         SHCMD("st -e tmux") },
 	{ MODKEY|ShiftMask,           XK_F4, spawn,         SHCMD("xbacklight -dec 15") },
 	{ MODKEY|ShiftMask,           XK_F5, spawn,         SHCMD("xbacklight -inc 15") },
 	{ MODKEY|ShiftMask,           XK_F6, spawn,         SHCMD("redshift -O 1500K") },
 	{ MODKEY|ShiftMask,           XK_F7, spawn,         SHCMD("redshift -O 3000K") },
 	{ MODKEY|ShiftMask,           XK_F8, spawn,         SHCMD("redshift -x") },
-
   // Volume control through ALSA
   { MODKEY|ShiftMask,           XK_F10, spawn,         SHCMD("amixer -q set Master toggle") },
 	{ MODKEY|ShiftMask,           XK_F11, spawn,         SHCMD("amixer -q set Master 5%- unmute") },
 	{ MODKEY|ShiftMask,           XK_F12, spawn,         SHCMD("amixer -q set Master 5%+ unmute") },
-  
-  // Volume control through OSS (generally used on other Unix-like systems)
-	/* { MODKEY|ShiftMask,           XK_F10, spawn,         SHCMD("ossvol -t") },
-	{ MODKEY|ShiftMask,         XK_F11, spawn,         SHCMD("ossvol -d 2") },
-	{ MODKEY|ShiftMask,         XK_F12, spawn,         SHCMD("ossvol -i 2") }, */
-
+  // Window layout commands
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
